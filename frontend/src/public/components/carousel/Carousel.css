@@ -1,0 +1,12 @@
+
+.slick-slider {
+    text-align: center;
+  }
+
+  .slick-list{
+    overflow: visible;
+  }
+
+  .slick-arrow::before{
+    display: none;
+  }

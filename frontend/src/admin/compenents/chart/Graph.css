@@ -1,0 +1,10 @@
+.graph{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+ canvas{
+    max-height: 500px;
+}

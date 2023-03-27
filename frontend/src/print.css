@@ -1,0 +1,89 @@
+/* tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* variables */
+:root {
+  --main-color: #03091a;
+  --section-color: #16213c;
+  --color-primary: #ebbe4d;
+  --color-primary-transparent: #ebbe4d00;
+  --gradient-color: #ebbe4d, #ebbe4d00;
+  --color-primary-hover: #ffcf55;
+  --text-color: #f0f8ff;
+  --text-color-grey: #d8d8d8;
+  --color-grey: #ffffff;
+  --light-color-grey: #968e8e;
+  --color-dark: #111;
+  --transparent-alice: #f0f8ff20;
+}
+
+/* fonts */
+
+/* Sk-Modernist, serif */
+@font-face {
+  font-family: Modern;
+  src: url(./assets/fonts/Modernist/Sk-Modernist-Regular.otf);
+}
+
+/* Ade, sans-serif */
+@font-face {
+  font-family: Ade;
+  src: url(./assets/fonts/Ade/Ade-Display.otf);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+[data-scroll-reveal-element] {
+  opacity: 0;
+  transition: opacity .7s ease;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Modern", sans-serif;
+  color: #03091a;
+  font-size: 1rem;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.45rem;
+}
+h4 {
+  font-size: 1.25rem;
+}
+
+p {
+  font-size: 1.5rem;
+  font-weight: normal;
+  line-height: 1.5;
+}
+

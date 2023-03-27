@@ -1,0 +1,41 @@
+.AndelorFooter h1{
+    font-family: 'Ade', serif;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+.AndelorFooter span {
+    color: var(--color-primary);
+}
+
+.footer {
+    border-top: 1px solid #fff;
+    text-align: center;
+}
+
+.footerButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    background-color: var(--color-primary);
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Ade', serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: 0.25s ease-in;
+}
+
+.footerButton:hover{
+    transform: scale(1.05);
+    transition: 0.25s ease-out;
+}
+
+.footerButton a{
+    color: #000;
+    text-decoration: none;
+}

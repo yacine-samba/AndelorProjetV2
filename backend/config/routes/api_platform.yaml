@@ -1,0 +1,7 @@
+api_platform:
+    resource: .
+    type: api_platform
+    prefix: /api
+api_user-info:
+    path: /api/user-info
+    controller: App\Controller\ApiController::getUserInfo

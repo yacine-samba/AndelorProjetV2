@@ -1,0 +1,89 @@
+.ticket {
+  background-color: var(--transparent-alice);
+  margin: 32px 0;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  border-width: 1px;
+  font-weight: bold;
+}
+.ticketnew {
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonTicket {
+  padding: 20px;
+}
+
+.AddInfo p{
+  font-size: 1rem;
+  background-color: var(--color-primary);
+  color: var(--color-dark);
+  width: 200px;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  position: absolute;
+  top: -140%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.form {
+  padding: 2rem 0;
+}
+
+.input {
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+  padding-top: 1.5rem;
+}
+.input + .input {
+  margin-top: 1.5rem;
+}
+
+.input-label {
+  color: #8597a3;
+  position: absolute;
+  top: 1.5rem;
+  transition: 0.25s ease;
+}
+.input-label-date{
+  color: var(--color-primary);
+}
+.input-field {
+  border: 0;
+  z-index: 1;
+  background-color: transparent;
+  border-bottom: 2px solid var(--text-color-grey);
+  font: inherit;
+  font-size: 1.125rem;
+  padding: 0.25rem 0;
+}
+.input-field:focus,
+.input-field:valid {
+  outline: 0;
+  border-bottom-color: var(--color-primary);
+}
+.input-field:focus + .input-label,
+.input-field:valid + .input-label {
+  color: var(--color-primary);
+  transform: translateY(-1.5rem);
+}
+
+.select option {
+  background-color: var(--main-color);
+  color: var(--text-color);
+}
+
+.input input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  width: 100%;
+  -webkit-appearance: none;
+  opacity: 0;
+}

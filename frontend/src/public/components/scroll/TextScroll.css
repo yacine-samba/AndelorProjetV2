@@ -1,0 +1,6 @@
+.text {
+  text-transform: uppercase;
+  font-weight: 900;
+  white-space: nowrap;
+  transition: transform 0.3s ease-out;
+}
