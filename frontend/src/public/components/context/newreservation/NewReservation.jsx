@@ -93,6 +93,14 @@ export const NewReservation = ({ path }) => {
         }
     };
 
+    // date disabled
+    const today = new Date();
+    const dd = String(today.getDate()).padStart(2, '0');
+    const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    const yyyy = today.getFullYear();
+
+    const todayDate = yyyy + '-' + mm + '-' + dd;
+
     const time = [];
 
     for (let heure = 10; heure <= 18; heure++) {
@@ -163,6 +171,7 @@ export const NewReservation = ({ path }) => {
                     <input
                         type="date"
                         id="date"
+                        min={todayDate}
                         className="input-field"
                         value={date}
                         onChange={(e) => setDate(e.target.value)}

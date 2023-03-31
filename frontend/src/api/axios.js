@@ -2,7 +2,7 @@ import axios from "axios";
 import { profilservices } from "../services/profilservices";
 
 const Axios = axios.create({
-  baseURL: "http://localhost:8000",
+  baseURL: "http://127.0.0.1:8000",
 });
 
 Axios.interceptors.request.use(request => {
@@ -24,15 +24,15 @@ Axios.interceptors.request.use(request => {
 })
 
 // Intercepteur de réponse API pour vérification de la session
-// Axios.interceptors.response.use(response => {
-//     return response
-// }, error => {
-//     if(error.response.status === 401){
-//         profilservices.logout()
-//         // window.location = '/reservation'
-//     }else{
-//         return Promise.reject(error)
-//     }
-// })
+Axios.interceptors.response.use(response => {
+    return response
+}, error => {
+    if(error.response.status === 401){
+        profilservices.logout()
+        window.location = '/'
+    }else{
+        return Promise.reject(error)
+    }
+})
 
 export default Axios;

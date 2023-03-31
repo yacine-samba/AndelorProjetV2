@@ -9,7 +9,7 @@ export const Prism = () => {
     const [exposition, setExposition] = useState(null);
 
     useEffect(() => {
-        axios.get(`http://127.0.0.1:8000/api/expositions/1`)
+        axios.get(`/api/expositions/1`)
             .then(response => setExposition(response.data));
     }, []);
 

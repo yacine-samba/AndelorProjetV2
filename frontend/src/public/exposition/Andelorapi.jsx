@@ -20,7 +20,7 @@ export const Andelorapi = () => {
   const [exposition, setExposition] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://127.0.0.1:8000/api/expositions/1`)
+    axios.get(`/api/expositions/1`)
       .then(response => setExposition(response.data));
   }, []);
 
@@ -49,16 +49,16 @@ export const Andelorapi = () => {
     <Helmet>
       <meta name="description" content="L'exposition Andelor | Andelor" />
     </Helmet>
-      <div className="h-full-m8 pt-6 p-4">
+      <div className="h-full pt-6 p-4">
         <Back path={"/"} />
         <Prism />
         <Separator />
         <Popup textPopup={
           <div>
             <h2>Teaser de l’exposition</h2>
-            <video className='w-full' src={teaser} autoPlay loop muted playsInline controls>
+            <video className='w-full p-4' src={teaser} autoPlay loop muted playsInline controls>
               
-        <p>Votre navigateur ne supporte pas la vidéo actuelle. Voici un <a href={teaser}>lien vers la video</a>.</p>
+        <p>Votre navigateur ne supporte pas la vidéo actuelle. Voici un <a href="https://youtu.be/YM1Nr5aMFIE">lien vers la video</a>.</p>
             </video>
             <h3>Découvrez notre vidéo de présentation !</h3>
 
@@ -70,8 +70,8 @@ export const Andelorapi = () => {
         <Maps lat="48.83725175067427" lng="2.585281608119868"/>
         <Separator />
         <PresentBy
-          link="https://yacine-samba.fr"
-          name="Présenté par WebStory"
+          link="https://www.webstory-agency.chambaudry.butmmi.o2switch.site/"
+          name="Présenté par Web-Story"
         />
       </div>
       <div className='flex items-center justify-between sticky bottom-0 w-full bg-main-color p-4 border-t'>

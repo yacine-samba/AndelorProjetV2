@@ -135,7 +135,7 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 4rem 1rem;
+  padding: 6rem 1rem;
 }
 
 .section:nth-child(even) {

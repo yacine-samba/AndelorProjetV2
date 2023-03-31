@@ -5,6 +5,7 @@ import { Back } from '../components/back/Back'
 import Separator from '../components/separator/Separator';
 import './Faq.css';
 import { Helmet } from 'react-helmet';
+import { Button } from '../components/button/Button';
 
 export const Faq = () => {
 
@@ -88,6 +89,7 @@ export const Faq = () => {
             <Back path={"/"} />
             <h1 className="mb-12">Besoin d'aide ? Consultez notre foire aux questions !</h1>
             {renderQuestions()}
+            <Button path={'/'} margin='my-4 mx-auto'>Retour à l'accueil</Button>
         </div>
     );
 };

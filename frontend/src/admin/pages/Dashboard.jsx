@@ -10,6 +10,9 @@ export const Dashboard = () => {
   useEffect(() => {
       axios.get('http://localhost:8000/api/total-reservation')
           .then(response => {
+
+
+
             setAllReservation(response.data.total);
           })
           .catch(error => {

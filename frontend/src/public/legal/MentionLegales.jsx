@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 
 export const MentionLegales = () => {
   return (
-    <div className='mx-auto h-full max-w-xl'>
+    <div className='mx-auto h-full max-w-xl m-8 pt-6 p-4'>
     <Helmet>
       <meta name="description" content="Mentions Légales | Andelor" />
     </Helmet>

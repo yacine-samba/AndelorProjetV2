@@ -1,19 +1,21 @@
 import React from 'react'
 import { Button } from '../components/button/Button';
 import { Back } from '../components/back/Back'
-import guide1 from './assets/guide1.jpg';
-import guide2 from './assets/guide2.jpg';
-import guide3 from './assets/guide3.jpg';
-import guide4 from './assets/guide4.jpg';
+import guide1 from './assets/guide1.png';
+import guide from './assets/guide.pdf';
+import affiche1 from './assets/affiche.png';
+import affiche from './assets/affiche.pdf';
 import { Helmet } from 'react-helmet';
+import vr from './assets/vr.png';
+import ReactPlayer from 'react-player';
 
 export const Visite = () => {
     return (
         <div>
-        <Helmet>
-          <meta name="description" content="Visite de l'éxposition | Andelor" />
-        </Helmet>
-            <div className='section'>
+            <Helmet>
+                <meta name="description" content="Visite de l'éxposition | Andelor" />
+            </Helmet>
+            <div className='px-4 pt-8'>
                 <div className="mb-4 w-full">
                     <Back path="/" />
                 </div>
@@ -38,25 +40,55 @@ export const Visite = () => {
                     <p className='text-xl'>En plus des éléments traditionnels de l'exposition, nous sommes fiers d'offrir une expérience de réalité virtuelle qui vous permettra de plonger encore plus profondément dans le monde de la couleur. Avec des casques VR de pointe, vous pourrez explorer des mondes virtuels étonnants et découvrir des expériences de couleurs que vous ne pourriez jamais vivre autrement.</p>
                 </div>
             </div>
-
-            <div className="section text-center">
-                <h2>Décrouvrez notre guide</h2>
-                <div className='flex flex-col sm:flex-row items-center justify-between'>
-                    <img src={guide1} alt="Guide de l'exposition page1" />
-                    <img src={guide2} alt="Guide de l'exposition page2" />
-                    <img src={guide3} alt="Guide de l'exposition page3" />
-                    <img src={guide4} alt="Guide de l'exposition page4" />
+            <div className='bg-[#16213c] p-4 py-28'>
+                <h2 className='text-center'>Décrouvrez le guide et l'affiche de notre exposition !</h2>
+                <div>
+                    <div className='flex flex-col sm:flex-row justify-center'>
+                        <div className="text-center flex flex-col items-center mx-8">
+                            <img src={guide1} alt="Guide de l'exposition page1" />
+                            <a href={guide} target="_blank" className='hover:text-color-primary'>
+                                Voir le guide
+                            </a>
+                        </div>
+                        <div className="text-center flex flex-col items-center mx-8">
+                            <img src={affiche1} alt="Guide de l'exposition page1" />
+                            <a href={affiche} target="_blank" className='hover:text-color-primary'>
+                                Voir l'affiche
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <a href="/" className='hover:text-color-primary'>
-                    Voir le guide
-                </a>
             </div>
+
             <div className='section'>
-                <div className='bg-'>
-                    <h2 className='sm:w-3/4 pb-8'>Explorez l'univers d'Andelor en réalité virtuelle - Essayez maintenant !"</h2>
-                    <p>Découvrez l'expérience unique de l'application intéractive d'Andelor. Plongez dans un monde virtuel où vous pourrez explorer une exposition fascinante sur la couleur et vivre une aventure immersive grâce à la réalité virtuelle.</p>
-                    <Button margin={"mt-8"}>Découvrir</Button>
+
+                <div className='flex flex-col items-start justify-center lg:flex-row p-2'>
+                    <img src={vr} alt="Illustration de la couleur" className='m-0 p-0 pb-8 sm:max-w-sm' />
+                    <div className='lg:ml-8 max-w-lg'>
+                        <h2 className='pb-8'>Explorez l'univers d'Andelor en réalité virtuelle - Essayez maintenant !</h2>
+                        <p className='text-base'>Découvrez l'expérience unique de l'application intéractive d'Andelor. Plongez dans un monde virtuel où vous pourrez explorer une exposition fascinante sur la couleur et vivre une aventure immersive grâce à la réalité virtuelle.</p>
+                        <a href="https://andelor.fr/andelor-vr/">
+                            <Button margin={"mt-8"}>Découvrir</Button>
+                        </a>
+                    </div>
                 </div>
+
+                <div className='flex flex-col items-start justify-center lg:flex-row p-2'>
+                    <div className='lg:ml-8 max-w-lg'>
+                        <h2 className='pb-8'>Guide vidéo pour utiliser l'application Andelor avec Oculus Quest 2!</h2>
+                        <p className='text-base'>Dans ce tutoriel, nous allons vous guider à travers les différentes étapes pour vous permettre de profiter au maximum de cette expérience immersive.</p>
+                        <a href="https://andelor.fr/andelor-vr/">
+                        </a>
+                    </div>
+                    <div className='lg:ml-8 max-w-lg pt-4'>
+                        <p className='pb-8 text-center text-base'>Comment utiliser l'application interactive de l'exposition Andelor avec l'Oculus Quest 2 ?</p>
+                        <ReactPlayer
+                            width="300px"
+                            height="300px"
+                            url='https://www.youtube.com/watch?v=46_fel7mPRs&feature=youtu.be' />
+                    </div>
+                </div>
+                <Button path={'/'} margin='mt-8 mx-auto'>Retour à l'accueil</Button>
             </div>
         </div>
     )

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import './Login.css';
-import { useNavigate } from "react-router-dom";
 import axios from '../../../../api/axios';
+import './Login.css';
 import { profilservices } from '../../../../services/profilservices';
 
 
@@ -9,7 +8,6 @@ export const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
-    let navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -18,8 +16,9 @@ export const Login = () => {
                 email: email,
                 password: password,
             });
-            profilservices.saveToken(response.data.token);
-            navigate('/admin/dashboard');            
+            profilservices.saveToken(response.data.token);      
+            // navigate('/admin/dashboard');
+            window.location = '/admin/dashboard';
 
         } catch (error) {
             setError(error.message);

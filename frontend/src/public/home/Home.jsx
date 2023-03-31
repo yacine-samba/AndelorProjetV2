@@ -18,7 +18,7 @@ export const Home = () => {
         <meta name="description" content="Page d'accueil | Exposition Andelor" />
       </Helmet>
       <div className="hero h-screen">
-        <video autoPlay loop muted playsInline src={videobg}>
+        <video autoPlay loop muted playsInline src="https://andelor.samba.butmmi.o2switch.site/bg_1.mp4">
         <p>Votre navigateur ne supporte pas la vidéo actuelle. Voici un <a href={videobg}>lien vers la video</a>.</p>
         </video>
         <div className="flex flex-col items-center justify-end h-full">
@@ -43,13 +43,12 @@ export const Home = () => {
           <span className="text-[#FF69B4]">R</span>
           <span className="text-[#FF1493]">S</span>
         </h2>
-        <div className='flex flex-col items-center lg:flex-row lg:flex-row-reverse'>
-          <img src={colors} alt="Illustration de la couleur" />
-          <div className='lg:mr-8'>
-            <p>Hey toi ! Tu te demandes ce qu'est vraiment la couleur ?</p>
-            <p>Ça tombe bien, nous avons une exposition qui va t'émerveiller !<br /> Viens découvrir tous les secrets de la couleur, comment elle est créée sur les écrans et dans la vraie vie, et même comment les scientifiques l'étudient.<br /> Mais ce n'est pas tout ! Tu pourras aussi t'amuser en apprenant grâce à nos activités pour les petits et les grands. Alors, prêt à voir la vie en couleur ? </p><br />
+        <div className='flex flex-col items-start justify-center lg:flex-row p-8'>
+          <img src={colors} alt="Illustration de la couleur" className='m-0 p-0 pb-8 sm:max-w-sm'/>
+          <div className='lg:ml-8 max-w-md'>
+            <p className='text-center pb-4 sm:text-left'>Hey toi ! Tu te demandes ce qu'est vraiment la couleur ?</p>
+            <p className='text-base'>Ça tombe bien, nous avons une exposition qui va t'émerveiller !<br /> Viens découvrir tous les secrets de la couleur, comment elle est créée sur les écrans et dans la vraie vie, et même comment les scientifiques l'étudient.<br /> Mais ce n'est pas tout ! Tu pourras aussi t'amuser en apprenant grâce à nos activités pour les petits et les grands. Alors, prêt à voir la vie en couleur ? </p><br />
           </div>
-
         </div>
         <div className='flex flex-col items-center'>
           <p className='text-center'>Rejoins-nous pour une éxperience incroyable à l'exposition <span className="text-color-primary">Andelor</span> !</p>

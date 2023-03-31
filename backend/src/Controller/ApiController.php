@@ -15,6 +15,8 @@ use Namshi\JOSE\JWT;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
 use Symfony\Component\Security\Csrf\TokenStorage\TokenStorageInterface;
 use Symfony\Component\Security\Http\Attribute\CurrentUsers;
@@ -49,7 +51,7 @@ class ApiController extends AbstractController
     /**
      * @Route("/api/reservation", name="api_reservation", methods={"POST"})
      */
-    public function reservation(Request $request): Response
+    public function reservation(Request $request, MailerInterface $mailer): Response
     {
 
         $data = json_decode($request->getContent(), true);
@@ -86,12 +88,51 @@ class ApiController extends AbstractController
         $this->manager->persist($reservation);
         $this->manager->flush();
 
-        
+
         // Récupérer l'objet de réservation correspondant
         // $reservationId = $reservation->getId();
         // $reservation = $this->res->find($reservationId);
 
+        
+        $emailSend = (new Email())
+            ->from('contact@andelor.fr')
+            ->to($email)
+
+            ->subject('Confirmation de réservation pour l\'exposition Andelor!')
+
+            ->html(
+                '
+                <h1>Bonjour ' . $nom . '!</h1>
+                <p>Nous sommes ravis de vous confirmer votre réservation pour notre exposition Andelor ! Nous avons bien reçu votre demande et votre place est réservée pour la date et l\'heure choisies.</p>
+
+                <p>Nous sommes impatients de vous faire découvrir notre univers coloré et de partager cette expérience unique avec vous. N\'hésitez pas à nous contacter si vous avez des questions ou des demandes particulières.</p>
+
+                <p>Voici les informations de votre réservation :</p>
+
+                <p>Nom : ' . $nom . '</p>
+                <p>Prénom : ' . $prenom . '</p>
+                <p>Email : ' . $email . '</p>
+                <p>Téléphone : ' . $telephone . '</p>
+                <p>Nombre de billet.s : ' . $nombre_billet . '</p>
+                <p>Date de réservation : ' . $date_reservation->format('d/m/Y') . '</p>
+                <p>Heure de réservation : ' . $heure_reservation->format('H') . 'h</p>
+
+
+                <p>Si vous avez besoin de modifier ou d\'annuler votre réservation, n\'hésitez pas à nous contacter par téléphone ou par e-mail. Nous serons heureux de vous aider à tout moment.</p>
+
+                <p>Vous pouvez retrouver toutes les informations sur notre exposition sur notre site internet : <a href="https://andelor.fr">www.andelor.fr</a></p>
+
+                <p>Merci de votre confiance et à bientôt pour un moment de découverte et d\'émerveillement !</p>
+
+                <p>L\'équipe Andelor</p>
+                '
+            );
+
+        $mailer->send($emailSend);
+
+
         return $this->json($reservation);
+
     }
 
 
@@ -320,7 +361,7 @@ class ApiController extends AbstractController
             return new JsonResponse(['message' => 'Tableau introuvable'], Response::HTTP_NOT_FOUND);
         }
 
-        
+
         // Sommes des billets vendus
 
         $total = 0;

@@ -17,11 +17,7 @@ export const AdminRouter = () => {
       </AuthGuard>
       <Routes>
         <Route path="/" element={<AdminLogin />} />
-        <Route path="/dashboard" element={
-          <AuthGuard>
-            <Dashboard />
-          </AuthGuard>
-        } />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/dashboard/action/edit/:id" element={<Edit />} />
         <Route path="/statistiques" element={<Stats />} />
         <Route path="/users" element={<Users />} />

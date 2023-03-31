@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import { Header } from './components/header/Header';
 import { Footer } from './components/footer/Footer';
 import { Home } from './home/Home';
@@ -18,7 +18,7 @@ export const AdminRouter = () => {
             <Header />
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/exposition" element={<Andelorapi />} />
+                <Route basename="/exposition" path="/exposition" element={<Andelorapi />} />
                 <Route path="/visite" element={<Visite />} />
                 <Route path="/tickets" element={<Tickets />} />
                 <Route path="/confirmation-reservation" element={<ConfirmationRes />} />
