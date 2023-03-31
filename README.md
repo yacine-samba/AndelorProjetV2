@@ -15,7 +15,9 @@ Le site de réservation inclus une partie back office pour l'administration et l
 
 **Captures d'écran**
 
-![Capture d'écran 1](https://i.imgur.com/5Z5Y1jE.png)
+![Page d'accueil](https://andelor.samba.butmmi.o2switch.site/home.png)
+![Page d'éxposition](https://andelor.samba.butmmi.o2switch.site/mobile.gif) 
+![Back Office](https://andelor.samba.butmmi.o2switch.site/backoffice.png) 
 
 **Stack utilisée**
 
